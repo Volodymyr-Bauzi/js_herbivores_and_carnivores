@@ -11,10 +11,10 @@ class Animal {
   }
 
   die() {
-    const index = Animal.alive.indexOf(this);
+    const filtered = Animal.alive.filter((animal) => animal !== this);
 
-    if (index !== -1) {
-      Animal.alive.splice(index, 1);
+    if (filtered.length !== Animal.alive.length) {
+      Animal.alive = filtered;
     }
   }
 }
